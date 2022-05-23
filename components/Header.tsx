@@ -1,7 +1,20 @@
 import Image from 'next/image'
 import React from 'react'
-import { ChevronDownIcon, HomeIcon, SearchIcon } from '@heroicons/react/solid'
-import { StarIcon } from '@heroicons/react/outline'
+import {
+  ChevronDownIcon,
+  HomeIcon,
+  SearchIcon,
+  MenuIcon,
+} from '@heroicons/react/solid'
+import {
+  BellIcon,
+  ChatIcon,
+  GlobeIcon,
+  PlusIcon,
+  SparklesIcon,
+  SpeakerphoneIcon,
+  VideoCameraIcon,
+} from '@heroicons/react/outline'
 
 function Header() {
   return (
@@ -30,6 +43,36 @@ function Header() {
         />
         <button hidden type="submit" />
       </form>
+
+      <div className="mx-5 hidden items-center space-x-2 text-gray-500 lg:inline-flex">
+        <SparklesIcon className="icon" />
+        <GlobeIcon className="icon" />
+        <VideoCameraIcon className="icon" />
+        <hr className="h-10 border border-gray-100" />
+        <ChatIcon className="icon" />
+        <BellIcon className="icon" />
+        <PlusIcon className="icon" />
+        <SpeakerphoneIcon className="icon" />
+      </div>
+
+      <div className="ml-5 flex items-center lg:hidden">
+        <MenuIcon className="icon" />
+      </div>
+
+      {/* Sign in/Sign out button */}
+      <div className="hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex">
+        <div className="relative h-5 w-5 flex-shrink-0 items-center">
+          <Image
+            src="https://links.papareact.com/23l"
+            alt=""
+            height={5}
+            width={5}
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+        <p className="text-gray-400">Sign in</p>
+      </div>
     </div>
   )
 }
